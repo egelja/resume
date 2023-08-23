@@ -28,7 +28,7 @@ console = Console()
 res = httpx.get(JSON_RESUME_URL, timeout=TIMEOUT)
 
 if res.status_code != 200:
-    console.print("Could not get Resume JSON", style="bold red")
+    console.print(f"Could not get Resume JSON (Status code {res.status_code})", style="bold red")
     exit(1)
 
 RESUME = res.json()
