@@ -10,7 +10,7 @@ import httpx
 import jinja2
 from rich.console import Console
 
-JSON_RESUME_URL = "https://www.nikola.cx/assets/json/resume.json"
+JSON_RESUME_URL = "https://raw.githubusercontent.com/egelja/egelja.github.io/master/assets/json/resume.json"
 TIMEOUT = 20
 
 ROOT_DIR = Path(__file__).resolve().parent
