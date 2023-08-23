@@ -1,0 +1,4 @@
+* resume
+Resume, generated with latex from JSONResume.
+
+Based off of [[https://github.com/mateuszbaransanok/BubbleCV/][BubbleCV]], licensed under [[https://creativecommons.org/licenses/by/4.0/][CC-BY-4.0]].
