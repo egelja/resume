@@ -127,6 +127,19 @@ def format_date(date_str: str) -> str:
 
 env.filters["format_date"] = format_date
 
+# Full date format filter
+def format_date_full(date_str: str) -> str:
+    try:
+        date = datetime.fromisoformat(date_str)
+    except Exception as e:
+        console.print(e)
+        return "???"
+
+    return date.strftime("%Y.%m.%d")
+
+
+env.filters["format_date_full"] = format_date_full
+
 # Url escape filter
 def latex_escape(s: str) -> str:
     return s.replace("#", "\#").replace("%", "\%").replace("&", "\&")
@@ -173,6 +186,10 @@ if _should_render("work"):
 if _should_render("education"):
     _render_template("3_education.tex", RESUME)
 
-# Education
+# Volunteer work
 if _should_render("volunteer"):
     _render_template("4_volunteer.tex", RESUME)
+
+# Awards
+if _should_render("awards"):
+    _render_template("5_awards.tex", RESUME)
