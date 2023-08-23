@@ -1,0 +1,39 @@
+\cvsection[education]{Education}
+
+<& for school in education | sort(attribute='startDate') | reverse &>
+
+\begin{cvevent}[<<school.startDate | format_date>>][<<school.endDate | default('') | format_date>>]
+  <& if 'High School' is in(school.studyType) &>
+  \cvname{High School Diploma}
+  <& else &>
+  \cvname{<<school.studyType>>, <<school.area>>}
+  <& endif &>
+
+  <& if school.url &>
+  \cvdescription{\href{<<school.url | latex_escape>>}{<<school.institution>>}}
+  <& else &>
+  \cvdescription{<<school.name>>}
+  <& endif &>
+
+  <& if school.score &>
+  \vspace{-2pt}
+  \textbf{Score: <<school.score>>}
+  \vspace{4pt}
+  <& endif &>
+  
+  \textbf{Relevant Coursework:}
+  \begin{itemize}
+    <& for course in school.courses &>
+  \item <<course | latex_escape>>
+    <& endfor &>
+  \end{itemize}
+\end{cvevent}
+
+\vspace {4pt}
+
+<& endfor &>
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../main"
+%%% End:

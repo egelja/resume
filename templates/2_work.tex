@@ -6,7 +6,7 @@
   \cvname{<<job.position>>}
 
   <& if job.url &>
-  \cvdescription{\href{<<job.url | url_latex_escape>>}{<<job.name>>}}
+  \cvdescription{\href{<<job.url | latex_escape>>}{<<job.name>>}}
   <& else &>
   \cvdescription{<<job.name>>}
   <& endif &>

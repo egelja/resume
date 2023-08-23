@@ -128,14 +128,21 @@ def format_date(date_str: str) -> str:
 env.filters["format_date"] = format_date
 
 # Url escape filter
-def url_latex_escape(url: str) -> str:
-    return url.replace("#", "\#")
+def latex_escape(s: str) -> str:
+    return s.replace("#", "\#").replace("%", "\%").replace("&", "\&")
 
 
-env.filters["url_latex_escape"] = url_latex_escape
+env.filters["latex_escape"] = latex_escape
 
 # Render the templates
 console.print()
+
+
+def _should_render(key: str):
+    # TODO(nino): Improve this for sub-keys of key
+    if key not in RESUME or not RESUME[key]:
+        return False
+    return True
 
 
 def _render_template(name: str, args: dict[str, t.Any] = dict()) -> None:
@@ -151,12 +158,17 @@ def _render_template(name: str, args: dict[str, t.Any] = dict()) -> None:
 
 
 # Prelude
-if "basics" in RESUME:
+if _should_render("basics"):
     _render_template("0_prelude.tex", RESUME["basics"])
 
 # Profile
-if "basics" in RESUME:
+if _should_render("basics"):
     _render_template("1_profile.tex", RESUME["basics"])
 
 # Work
-_render_template("2_work.tex", RESUME)
+if _should_render("work"):
+    _render_template("2_work.tex", RESUME)
+
+# Education
+if _should_render("education"):
+    _render_template("3_education.tex", RESUME)
