@@ -1,6 +1,6 @@
-import glob
 import mimetypes
 import shutil
+import typing as t
 from os import getenv
 from pathlib import Path
 from sys import exit
@@ -48,12 +48,16 @@ for file in RESOURCES_DIR.glob("avatar*"):
     file.unlink()
 
 
-def _use_default_picture():
+def _use_default_avatar() -> None:
     console.print("Using default avatar")
     shutil.copy(default_picture_file, picture_file.with_suffix(".png"))
 
 
-if "basics" in RESUME and "image" in RESUME["basics"]:
+def _download_avatar() -> bool:
+    if "basics" not in RESUME or "image" not in RESUME["basics"]:
+        # no avatar
+        return False
+
     # Have picture, download
     console.print(f"Downloading avatar from {RESUME['basics']['image']}")
 
@@ -63,23 +67,28 @@ if "basics" in RESUME and "image" in RESUME["basics"]:
     if res.status_code != 200:
         # Download failed
         console.print("Could not download resume image", style="bold red")
-        _use_default_picture()
-    else:
-        # Save image
-        content_type = res.headers["Content-Type"]
-        ext = mimetypes.guess_extension(content_type)
+        return False
 
-        if ext is None:
-            # Unknown extension
-            console.print(f"Unknown file type {content_type}", style="bold red")
-            _use_default_picture()
-        else:
-            # Open the picture file and save the image
-            with picture_file.with_suffix(ext).open("wb") as f:
-                f.write(res.content)
-else:
-    # No picture provided
-    _use_default_picture()
+    # Save image
+    content_type = res.headers["Content-Type"]
+    ext = mimetypes.guess_extension(content_type)
+
+    if ext is None:
+        # Unknown extension
+        console.print(f"Unknown file type {content_type}", style="bold red")
+        return False
+
+    # Open the picture file and save the image
+    with picture_file.with_suffix(ext).open("wb") as f:
+        f.write(res.content)
+
+    # Success
+    return True
+
+
+# Perform download
+if not _download_avatar():
+    _use_default_avatar()
 
 
 ###############################################################################
@@ -93,6 +102,31 @@ OUTPUT_DIR.mkdir(parents=True)
 env = jinja2.Environment(
     loader=jinja2.FileSystemLoader([TEMPLATE_DIR]),
     autoescape=False,  # Assume all data is trusted
+    block_start_string="<&",
+    block_end_string="&>",
+    variable_start_string="<<",
+    variable_end_string=">>",
+    comment_start_string="<#",
+    comment_end_string="#>",
 )
 
-# Render templates
+console.print()
+
+
+def _render_template(name: str, args: dict[str, t.Any] = dict()) -> None:
+    console.print(f"Rendering template {name}... ", end="")
+
+    out_file = OUTPUT_DIR / name
+    render = env.get_template(name).render(**args)
+
+    with out_file.open("w") as f:
+        f.write(render)
+
+    console.print("Rendered", style="bold green")
+
+
+# Prelude
+_render_template("0_prelude.tex", RESUME["basics"])
+
+# Profile
+_render_template("1_profile.tex", RESUME["basics"])
