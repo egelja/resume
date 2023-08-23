@@ -147,6 +147,27 @@ def latex_escape(s: str) -> str:
 
 env.filters["latex_escape"] = latex_escape
 
+# Fluency to percentage
+def fluency_to_percentage(s: str) -> str:
+    s = s.lower()
+
+    if "native" in s:
+        return "1.0"
+    elif "full professional" in s:
+        return "0.8"
+    elif "professional" in s or s == "fluent":
+        return "0.6"
+    elif "limited" in s:
+        return "0.4"
+    elif "elementary" in s:
+        return "0.2"
+
+    return "0.0"
+
+
+env.filters["fluency_to_percentage"] = fluency_to_percentage
+
+
 # Render the templates
 console.print()
 
@@ -201,3 +222,11 @@ if _should_render("awards"):
 # Contact info
 if _should_render("basics"):
     _render_template("A_contact.tex", RESUME["basics"])
+
+# Skills
+if _should_render("skills"):
+    _render_template("B_skills.tex", RESUME)
+
+# Languages
+if _should_render("languages"):
+    _render_template("C_languages.tex", RESUME)

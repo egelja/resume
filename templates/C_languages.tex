@@ -1,0 +1,10 @@
+\cvsection[languages]{Languages}  %--------------------------------------------------------
+
+<& for lang in languages &>
+\cvskill{<<lang.language>>}{<<lang.fluency>>}{<<lang.fluency | fluency_to_percentage>>}
+<& endfor &>
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../main"
+%%% End:
