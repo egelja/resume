@@ -1,6 +1,7 @@
 import mimetypes
 import shutil
 import typing as t
+from datetime import datetime
 from os import getenv
 from pathlib import Path
 from sys import exit
@@ -110,6 +111,30 @@ env = jinja2.Environment(
     comment_end_string="#>",
 )
 
+# Date format filter
+def format_date(date_str: str) -> str:
+    if not date_str:
+        return "Present"
+
+    try:
+        date = datetime.fromisoformat(date_str)
+    except Exception as e:
+        console.print(e)
+        return "???"
+
+    return date.strftime("%b %Y")
+
+
+env.filters["format_date"] = format_date
+
+# Url escape filter
+def url_latex_escape(url: str) -> str:
+    return url.replace("#", "\#")
+
+
+env.filters["url_latex_escape"] = url_latex_escape
+
+# Render the templates
 console.print()
 
 
@@ -126,7 +151,12 @@ def _render_template(name: str, args: dict[str, t.Any] = dict()) -> None:
 
 
 # Prelude
-_render_template("0_prelude.tex", RESUME["basics"])
+if "basics" in RESUME:
+    _render_template("0_prelude.tex", RESUME["basics"])
 
 # Profile
-_render_template("1_profile.tex", RESUME["basics"])
+if "basics" in RESUME:
+    _render_template("1_profile.tex", RESUME["basics"])
+
+# Work
+_render_template("2_work.tex", RESUME)

@@ -1,0 +1,29 @@
+\cvsection[work]{Work experience}
+
+<& for job in work | sort(attribute='endDate') | sort(attribute='startDate') | reverse &>
+
+\begin{cvevent}[<<job.startDate | format_date>>][<<job.endDate | default('') | format_date>>]
+  \cvname{<<job.position>>}
+
+  <& if job.url &>
+  \cvdescription{\href{<<job.url | url_latex_escape>>}{<<job.name>>}}
+  <& else &>
+  \cvdescription{<<job.name>>}
+  <& endif &>
+
+  <& if job.summary &>
+  <<job.summary>>
+  \vspace{2pt}
+  <& endif &>
+  
+  \begin{itemize}
+    <& for highlight in job.highlights &>
+  \item <<highlight>>
+    <& endfor &>
+  \end{itemize}
+  
+\end{cvevent}
+
+\vspace{4pt}
+  
+<& endfor &>
