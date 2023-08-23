@@ -155,7 +155,7 @@ def fluency_to_percentage(s: str) -> str:
         return "1.0"
     elif "full professional" in s:
         return "0.8"
-    elif "professional" in s or s == "fluent":
+    elif "professional" in s:
         return "0.6"
     elif "limited" in s:
         return "0.4"
@@ -166,6 +166,26 @@ def fluency_to_percentage(s: str) -> str:
 
 
 env.filters["fluency_to_percentage"] = fluency_to_percentage
+
+# Short fluency
+def short_fluency(s: str) -> str:
+    s = s.lower()
+
+    if "native" in s:
+        return "Native Speaker"
+    elif "full professional" in s:
+        return "Fluent"
+    elif "professional" in s:
+        return "Conversational"
+    elif "limited" in s:
+        return "Limited"
+    elif "elementary" in s:
+        return "Elementary"
+
+    return "0.0"
+
+
+env.filters["short_fluency"] = short_fluency
 
 
 # Render the templates
@@ -230,3 +250,7 @@ if _should_render("skills"):
 # Languages
 if _should_render("languages"):
     _render_template("C_languages.tex", RESUME)
+
+# Interests
+if _should_render("interests"):
+    _render_template("D_interests.tex", RESUME)
