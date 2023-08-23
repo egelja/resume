@@ -1,0 +1,28 @@
+version: '3'
+
+tasks:
+  generate:
+    dir: '{{.USER_WORKING_DIR}}'
+    cmds:
+      - python generate.py
+
+  render:
+    dir: '{{.USER_WORKING_DIR}}'
+    deps: [generate]
+    cmds:
+      - latexmk -pdf
+
+  default:
+    dir: '{{.USER_WORKING_DIR}}'
+    deps: [render]
+    cmds:
+      - cmd: cmd /c start main.pdf
+        platforms: [windows]
+      - cmd: open main.pdf
+        platforms: [linux, darwin]
+
+  clean:
+    dir: '{{.USER_WORKING_DIR}}'
+    cmds:
+      - latexmk -C
+
