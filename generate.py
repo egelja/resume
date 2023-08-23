@@ -172,3 +172,7 @@ if _should_render("work"):
 # Education
 if _should_render("education"):
     _render_template("3_education.tex", RESUME)
+
+# Education
+if _should_render("volunteer"):
+    _render_template("4_volunteer.tex", RESUME)
