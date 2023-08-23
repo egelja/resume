@@ -1,10 +1,10 @@
-\cvsection[languages]{Languages}  %--------------------------------------------------------
-
-<& for lang in languages &>
 \begin{minipage}{\dimexpr(\linewidth - \cvsidebaroffset mm)}
+  \cvsection[languages]{Languages} 
+
+  <& for lang in languages &>
   \cvskill{<<lang.language>>}{<<lang.fluency | short_fluency>>}{<<lang.fluency | fluency_to_percentage>>}
+  <& endfor &>
 \end{minipage}
-<& endfor &>
 
 %%% Local Variables:
 %%% mode: latex
