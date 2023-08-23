@@ -1,0 +1,41 @@
+\cvsection[contact]{Contact} 
+
+\begin{cvitem}[Envelope][4]
+    \textbf{Email}\\
+    \href{mailto:<<email>>}{\texttt{<<email>>}}
+\end{cvitem}
+
+\cvseparator[3]
+\begin{cvitem}[Phone][4]
+    \textbf{Phone}\\
+    \href{tel:<<phone>>}{\texttt{<<phone>>}}
+\end{cvitem}
+
+\cvseparator[3]
+\begin{cvitem}[Home][4]
+    \textbf{Address}\\
+    <<location.address>>\\
+    <<location.city>>, <<location.postalCode>>, <<location.countryCode>>
+\end{cvitem}
+
+\cvseparator[3]
+\begin{cvitem}[Globe][4]
+    \textbf{Website}\\
+    \href{<<url>>}{\texttt{<<url>>}}
+\end{cvitem}
+
+
+<& for profile in profiles &>
+
+\cvseparator[3]
+\begin{cvitem}[<<profile.network>>][4]
+    \textbf{<<profile.network>>}\\
+    \href{<<profile.url>>}{\texttt{<<profile.username>>}}
+\end{cvitem}
+
+<& endfor &>
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../main"
+%%% End:

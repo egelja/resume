@@ -193,3 +193,11 @@ if _should_render("volunteer"):
 # Awards
 if _should_render("awards"):
     _render_template("5_awards.tex", RESUME)
+
+#
+# SIDEBAR
+#
+
+# Contact info
+if _should_render("basics"):
+    _render_template("A_contact.tex", RESUME["basics"])
