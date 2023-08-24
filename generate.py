@@ -28,7 +28,9 @@ console = Console()
 res = httpx.get(JSON_RESUME_URL, timeout=TIMEOUT)
 
 if res.status_code != 200:
-    console.print(f"Could not get Resume JSON (Status code {res.status_code})", style="bold red")
+    console.print(
+        f"Could not get Resume JSON (Status code {res.status_code})", style="bold red"
+    )
     exit(1)
 
 RESUME = res.json()
@@ -93,6 +95,43 @@ if not _download_avatar():
 
 
 ###############################################################################
+# Prepare data
+###############################################################################
+# Escape our data
+@t.overload
+def latex_escape(data: str) -> str:
+    ...
+
+
+@t.overload
+def latex_escape(data: dict) -> dict:
+    ...
+
+
+@t.overload
+def latex_escape(data: list) -> list:
+    ...
+
+
+def latex_escape(data: str | list | dict | t.Any) -> str | list | dict | t.Any:
+    if isinstance(data, dict):
+        return {key: latex_escape(val) for key, val in data.items()}
+    elif isinstance(data, list):
+        return [latex_escape(val) for val in data]
+    elif isinstance(data, str):
+        return (
+            data.replace("#", "\\#")
+            .replace("%", "\\%")
+            .replace("&", "\\&")
+            .replace("\260", "\\degree")
+        )
+    else:
+        return data
+
+
+RESUME = latex_escape(RESUME)
+
+###############################################################################
 # Render templates
 ###############################################################################
 # Clear old renders
@@ -140,13 +179,6 @@ def format_date_full(date_str: str) -> str:
 
 env.filters["format_date_full"] = format_date_full
 
-# Url escape filter
-def latex_escape(s: str) -> str:
-    return s.replace("#", "\#").replace("%", "\%").replace("&", "\&")
-
-
-env.filters["latex_escape"] = latex_escape
-
 # Fluency to percentage
 def fluency_to_percentage(s: str) -> str:
     s = s.lower()
@@ -186,7 +218,6 @@ def short_fluency(s: str) -> str:
 
 
 env.filters["short_fluency"] = short_fluency
-
 
 # Render the templates
 console.print()

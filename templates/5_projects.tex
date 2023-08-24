@@ -6,7 +6,7 @@
 
 \resumeProjectHeading{%
   <&- if project.url &>
-  \href{<<project.url | latex_escape>>}{\textbf{<<project.name>>}}
+  \href{<<project.url>>}{\textbf{<<project.name>>}}
   <&- else &>
   \textbf{<<project.name>>}
   <&- endif &> $|$ \emph{<<project.summary>>}%
@@ -14,15 +14,21 @@
   <<project.startDate | format_date>> -- <<project.endDate | default('') | format_date>>%
 }
 
+\vspace{-4pt}
+
 \resumeItemListStart
 <&- for hl in project.highlights &>
 \resumeItem{<<hl>>}
 <&- endfor &>
 \resumeItemListEnd
 
+\vspace{-4pt}
+
 <& endfor &>
 
 \resumeSubHeadingListEnd
+
+\vspace{-12pt}
 
 %%% Local Variables:
 %%% mode: latex
