@@ -2,7 +2,7 @@
 
 \resumeSubHeadingListStart
 
-<& for project in projects &>
+<& for project in projects | sort(attribute='startDate') | reverse &>
 
 \resumeProjectHeading{%
   <&- if project.url &>

@@ -152,7 +152,7 @@ env = jinja2.Environment(
 )
 
 # Date format filter
-def format_date(date_str: str) -> str:
+def format_date(date_str: str, full_month: bool = False) -> str:
     if not date_str:
         return "Present"
 
@@ -162,6 +162,8 @@ def format_date(date_str: str) -> str:
         console.print(e)
         return "???"
 
+    if full_month:
+        return date.strftime("%B %Y")
     return date.strftime("%b %Y")
 
 

@@ -25,6 +25,10 @@
 \vspace{-4pt}
 
 \resumeItemListStart
+<&- if school.expectedEndDate &>
+\resumeItem{\textbf{Expected Graduation:} <<school.expectedEndDate | format_date(full_month=True)>>}
+<&- endif &>
+
 <&- if school.score &>
 \resumeItem{\textbf{Score:} <<school.score>>}
 <&- endif &>
