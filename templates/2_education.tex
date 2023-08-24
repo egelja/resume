@@ -22,23 +22,18 @@
   <<school.startDate | format_date>> -- <<school.endDate | default('') | format_date>>%
 }
 
-\vspace{4pt}
-\small
-
-<& if school.score &>
-Score: <<school.score>>
 \vspace{-4pt}
-<& endif &>
-
-Relevant Coursework:
-
-\vspace{-8pt}
-\normalsize
 
 \resumeItemListStart
-<& for course in school.courses &>
-\resumeItem{<<course>>}
-<& endfor &>
+<&- if school.score &>
+\resumeItem{\textbf{Score:} <<school.score>>}
+<&- endif &>
+
+\resumeItem{\textbf{Relevant Coursework:} %
+<&- for course in school.courses &>
+<<course>><<';' if not loop.last else ''>> %
+<&- endfor &>
+}
 \resumeItemListEnd
 
 \vspace{-4pt}

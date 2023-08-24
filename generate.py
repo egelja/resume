@@ -124,6 +124,7 @@ def latex_escape(data: str | list | dict | t.Any) -> str | list | dict | t.Any:
             .replace("%", "\\%")
             .replace("&", "\\&")
             .replace("\260", "\\degree")
+            .replace(" - ", " -- ")  # em dash
         )
     else:
         return data
@@ -246,13 +247,13 @@ def _render_template(name: str, args: dict[str, t.Any] = dict()) -> None:
 if _should_render("basics"):
     _render_template("1_profile.tex", RESUME["basics"])
 
-# Work
-if _should_render("work"):
-    _render_template("2_work.tex", RESUME)
-
 # Education
 if _should_render("education"):
-    _render_template("3_education.tex", RESUME)
+    _render_template("2_education.tex", RESUME)
+
+# Work
+if _should_render("work"):
+    _render_template("3_work.tex", RESUME)
 
 # Awards
 if _should_render("awards"):
