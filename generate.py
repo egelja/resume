@@ -123,7 +123,7 @@ def latex_escape(data: str | list | dict | t.Any) -> str | list | dict | t.Any:
             data.replace("#", "\\#")
             .replace("%", "\\%")
             .replace("&", "\\&")
-            .replace("\260", "\\degree")
+            .replace("\260", "\\degree{}")
             .replace(" - ", " -- ")  # em dash
         )
     else:
