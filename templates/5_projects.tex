@@ -1,0 +1,30 @@
+\section{Projects}
+
+\resumeSubHeadingListStart
+
+<& for project in projects &>
+
+\resumeProjectHeading{%
+  <&- if project.url &>
+  \href{<<project.url | latex_escape>>}{\textbf{<<project.name>>}}
+  <&- else &>
+  \textbf{<<project.name>>}
+  <&- endif &> $|$ \emph{<<project.summary>>}%
+}{%
+  <<project.startDate | format_date>> -- <<project.endDate | default('') | format_date>>%
+}
+
+\resumeItemListStart
+<&- for hl in project.highlights &>
+\resumeItem{<<hl>>}
+<&- endfor &>
+\resumeItemListEnd
+
+<& endfor &>
+
+\resumeSubHeadingListEnd
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../main"
+%%% End:

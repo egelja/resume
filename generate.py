@@ -227,17 +227,10 @@ if _should_render("education"):
 if _should_render("awards"):
     _render_template("4_awards.tex", RESUME)
 
-#
-# SIDEBAR
-#
+# Projects
+if _should_render("projects"):
+    _render_template("5_projects.tex", RESUME)
+
 # Skills
 if _should_render("skills"):
-    _render_template("B_skills.tex", RESUME)
-
-# Languages
-if _should_render("languages"):
-    _render_template("C_languages.tex", RESUME)
-
-# Interests
-if _should_render("interests"):
-    _render_template("D_interests.tex", RESUME)
+    _render_template("6_skills.tex", RESUME)

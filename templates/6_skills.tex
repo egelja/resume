@@ -1,0 +1,20 @@
+\section{Technical Skills}
+
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+<&- for skill in skills &>
+\textbf{<<skill.name>>}{: %
+  <&- for kw in skill.keywords &>
+  <<kw>><<',' if not loop.last else ''>> %
+  <&- endfor &>
+}<<'\\\\' if not loop.last else ''>>
+<&- endfor &>
+   }}
+ \end{itemize}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../main"
+%%% End:
