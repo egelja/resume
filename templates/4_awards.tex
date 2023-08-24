@@ -1,0 +1,32 @@
+\section{Awards and Honors}
+
+\resumeSubHeadingListStart
+
+<& for award in awards | sort(attribute='date') | reverse &>
+
+\resumeProjectHeading{
+  \textbf{<<award.title>>} $|$ \emph{%
+  <&- if award.url &>
+  \href{<<award.url | latex_escape>>}{<<award.awarder>>}%
+  <&- else &>
+  <<award.awarder>>%
+  <&- endif &>
+  }
+}{<<award.date | format_date_full>>}
+
+<& if award.summary &>
+\vspace{3pt}
+\hspace{12pt}
+<<award.summary>>
+<& endif &>
+  
+<& endfor &>
+
+\resumeSubHeadingListEnd
+\vspace{-18pt}
+  
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../main"
+%%% End:

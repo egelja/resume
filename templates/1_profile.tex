@@ -1,4 +1,10 @@
-\cvsection[summary]{Profile}  %-----------------------------------------------------------
-
-<<summary>>
-
+\begin{center}
+  \textbf{\Huge \scshape <<name>>} \\
+  \vspace{1pt}
+  \small \href{tel:<<phone>>}{<<phone>>}
+  $|$ \href{mailto:<<email>>}{\underline{<<email>>}}
+  %$|$ <<location.address>>, <<location.city>>, <<location.postalCode>>
+  <&- for profile in profiles &>
+  $|$ \href{<<profile.url>>}{\underline{<<profile.network>>}}
+  <&- endfor &>
+\end{center}

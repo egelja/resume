@@ -1,37 +1,50 @@
-\cvsection[education]{Education}
+\section{Education}
+
+\resumeSubHeadingListStart
 
 <& for school in education | sort(attribute='startDate') | reverse &>
 
-\begin{cvevent}[<<school.startDate | format_date>>][<<school.endDate | default('') | format_date>>]
-  <& if 'High School' is in(school.studyType) &>
-  \cvname{High School Diploma}
-  <& else &>
-  \cvname{<<school.studyType>>, <<school.area>>}
-  <& endif &>
+\resumeSubheading{%
+  <&- if school.url &>
+  \href{<<school.url | latex_escape>>}{<<school.institution>>}%
+  <&- else &>
+  <<school.institution>>%
+  <&- endif &>
+}{%
+  <<school.location>>
+}{%
+  <&- if 'High School' is in(school.studyType) &>
+  High School Diploma%
+  <&- else &>
+  <<school.studyType>>, <<school.area>>%
+  <&- endif &>
+}{%
+  <<school.startDate | format_date>> -- <<school.endDate | default('') | format_date>>%
+}
 
-  <& if school.url &>
-  \cvdescription{\href{<<school.url | latex_escape>>}{<<school.institution>>}}
-  <& else &>
-  \cvdescription{<<school.name>>}
-  <& endif &>
+\vspace{6pt}
+\small
 
-  <& if school.score &>
-  \vspace{-2pt}
-  \textbf{Score: <<school.score>>}
-  \vspace{4pt}
-  <& endif &>
-  
-  \textbf{Relevant Coursework:}
-  \begin{itemize}
-    <& for course in school.courses &>
-  \item <<course | latex_escape>>
-    <& endfor &>
-  \end{itemize}
-\end{cvevent}
+<& if school.score &>
+Score: <<school.score>>
+\vspace{-2pt}
+<& endif &>
 
-\vspace {4pt}
+Relevant Coursework:
+
+\vspace{-8pt}
+\normalsize
+
+\resumeItemListStart
+  <& for course in school.courses &>
+\resumeItem{<<course | latex_escape>>}
+  <& endfor &>
+\resumeItemListEnd
 
 <& endfor &>
+
+\resumeSubHeadingListEnd
+\vspace{-20pt}
 
 %%% Local Variables:
 %%% mode: latex

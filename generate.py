@@ -211,10 +211,6 @@ def _render_template(name: str, args: dict[str, t.Any] = dict()) -> None:
     console.print("Rendered", style="bold green")
 
 
-# Prelude
-if _should_render("basics"):
-    _render_template("0_prelude.tex", RESUME["basics"])
-
 # Profile
 if _should_render("basics"):
     _render_template("1_profile.tex", RESUME["basics"])
@@ -227,22 +223,13 @@ if _should_render("work"):
 if _should_render("education"):
     _render_template("3_education.tex", RESUME)
 
-# Volunteer work
-if _should_render("volunteer"):
-    _render_template("4_volunteer.tex", RESUME)
-
 # Awards
 if _should_render("awards"):
-    _render_template("5_awards.tex", RESUME)
+    _render_template("4_awards.tex", RESUME)
 
 #
 # SIDEBAR
 #
-
-# Contact info
-if _should_render("basics"):
-    _render_template("A_contact.tex", RESUME["basics"])
-
 # Skills
 if _should_render("skills"):
     _render_template("B_skills.tex", RESUME)
