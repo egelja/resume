@@ -52,7 +52,7 @@ jobs:
   build_latex:
     runs-on: ubuntu-latest
     needs: should_run
-    if: ${{ needs.should_run.outputs.value }} == 'true'
+    if: always() && needs.should_run.outputs.value == 'true'
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v2
