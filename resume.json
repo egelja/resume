@@ -1,0 +1,278 @@
+{
+    "basics": {
+        "name": "Nikola V. Maruszewski",
+        "label": "Student and Researcher",
+        "image": "https://www.nikola.cx/assets/img/prof_pic.png",
+        "email": "me@nikola.cx",
+        "phone": "(847) 644-3542",
+        "url": "https://www.nikola.cx",
+        "summary": "Computer science major with a passion for learning. I plan to complete a masters degree in Computer Engineering through the BS/MS program at Northwestern University. Currently performing quantum systems research with Prof. Nikos Hardavellas in the PARAG@N Lab. I also have interests in computer engineering, embedded devices, machine learning, and compilers.",
+        "location": {},
+        "profiles": [
+            {
+                "network": "Github",
+                "username": "egelja",
+                "url": "https://github.com/egelja"
+            },
+            {
+                "network": "Linkedin",
+                "username": "nikola-maruszewski",
+                "url": "https://www.linkedin.com/in/nikola-maruszewski/"
+            },
+            {
+                "network": "Mastodon",
+                "username": "@nikola@discuss.systems",
+                "url": "https://discuss.systems/@nikola"
+            }
+        ]
+    },
+    "work": [
+        {
+            "name": "PARAG@N Lab",
+            "url": "http://paragon.cs.northwestern.edu/#Research",
+            "position": "Summer Undergraduate Researcher",
+            "startDate": "2023-06-12",
+            "endDate": "",
+            "summary": "Funded by an NSF REU and a grant from the NU CS department, I was able to perform cutting-edge research on quantum computing.",
+            "location": "Evanston, IL",
+            "highlights": [
+                "Designed and programmed a quantum compiler to optimize quantum circuits for emerging quantum computer topologies.",
+                "Created a development framework and tools for further quantum systems research.",
+                "Student leader of the project while an undergraduate student."
+            ]
+        },
+        {
+            "name": "Northwestern University",
+            "url": "https://www.mccormick.northwestern.edu/computer-science/academics/undergraduate/peer-mentor-program/",
+            "position": "Peer Mentor",
+            "startDate": "2023-06-11",
+            "endDate": "2023-08-25",
+            "summary": "Acted as an undergraduate peer mentor for CS 321 Programming Languages.",
+            "location": "Evanston, IL",
+            "highlights": [
+                "Held several office hours each week.",
+                "Answered questions, both synchronously in office hours each week and asynchronously on a Piazza message board."
+            ]
+        }
+    ],
+    "volunteer": [
+        {
+            "organization": "Distributed Proofreaders",
+            "position": "Volunteer",
+            "url": "https://www.pgdp.net/c/",
+            "startDate": "2021-08-28",
+            "endDate": "2022-06-03",
+            "summary": "Proofread books for Project Gutenberg through Distributed Proofreaders.",
+            "location": "Remote",
+            "highlights": [
+                "Gained valuable volunteering experience.",
+                "Provided proofread books for public domain usage."
+            ]
+        }
+    ],
+    "education": [
+        {
+            "institution": "Northwestern University",
+            "url": "https://www.northwestern.edu/",
+            "area": "Computer Science/Computer Engineering",
+            "studyType": "Bachelor/Master of Science",
+            "startDate": "2022-09-15",
+            "endDate": "",
+            "expectedEndDate": "2025-06-15",
+            "score": "4.00/4.00",
+            "location": "Evanston, IL",
+            "courses": [
+                "CS 322: Compiler Construction",
+                "CS 349: Machine Learning",
+                "CS 449: Deep Learning"
+            ]
+        },
+        {
+            "institution": "Roycemore School",
+            "url": "https://www.roycemoreschool.org/",
+            "area": "High School",
+            "studyType": "High School Diploma",
+            "startDate": "2018-08-23",
+            "endDate": "2022-06-03",
+            "score": "4.80/4.00",
+            "satScore": "1580",
+            "location": "Evanston, IL",
+            "courses": [
+                "AP Physics C: Mechanics and E&M",
+                "CS 213: Intro to Computer Systems (Dual Enrollment @ NU)",
+                "MATH 240: Linear Algebra (Dual Enrollment @ NU)"
+            ]
+        }
+    ],
+    "awards": [
+        {
+            "title": "Rebecca Ashley Thatcher Award for Overall Academic Achievement",
+            "date": "2022-06-03",
+            "awarder": "Roycemore School",
+            "url": "https://www.roycemoreschool.org",
+            "summary": "Awarded to the best-performing student in the Roycemore Senior class."
+        },
+        {
+            "title": "Headmaster's Award",
+            "date": "2022-05-13",
+            "awarder": "Roycemore School",
+            "url": "https://www.roycemoreschool.org",
+            "summary": "Awarded to the Senior best representing Roycemore's Core Values."
+        }
+    ],
+    "certificates": [],
+    "publications": [],
+    "skills": [
+        {
+            "name": "Programming Languages",
+            "icon": "fa-solid fa-code",
+            "level": "Master",
+            "keywords": [
+                "Python",
+                "C and C++",
+                "JavaScript",
+                "Java",
+                "MATLAB",
+                "Shell Script"
+            ]
+        },
+        {
+            "name": "Machine Learning",
+            "icon": "fa-solid fa-terminal",
+            "level": "Master",
+            "keywords": [
+                "PyTorch",
+                "NumPy",
+                "PolaRS",
+                "Scikit-learn",
+                "Linear Algebra"
+            ]
+        },
+        {
+            "name": "Tools",
+            "icon": "fa-solid fa-bug-slash",
+            "level": "Master",
+            "keywords": [
+                "Docker",
+                "Containerd",
+                "Taskfile",
+                "Make",
+                "CMake",
+                "Ruff and Flake8",
+                "Mypy",
+                "Poetry",
+                "Git",
+                "Github Actions",
+                "Linux"
+            ]
+        },
+        {
+            "name": "Robotics",
+            "icon": "fa-solid fa-robot",
+            "level": "Master",
+            "keywords": [
+                "Embedded devices",
+                "Embedded programming",
+                "ESP-32",
+                "Arduino",
+                "Intel 8051",
+                "Motor controls",
+                "Servos",
+                "Gyroscopes",
+                "PID Tuning",
+                "Motion processing",
+                "Command processing",
+                "Wireless communication"
+            ]
+        }
+    ],
+    "languages": [
+        {
+            "language": "English",
+            "fluency": "Native speaker"
+        },
+        {
+            "language": "Serbian",
+            "fluency": "Native Speaker"
+        },
+        {
+            "language": "French",
+            "fluency": "Professional working proficiency "
+        }
+    ],
+    "interests": [
+        {
+            "name": "Embedded Devices",
+            "icon": "fa-solid fa-gears",
+            "keywords": [
+                "ESP-32",
+                "Pololu Wixel"
+            ]
+        },
+        {
+            "name": "Computer Engineering",
+            "icon": "fa-solid fa-microchip",
+            "keywords": [
+                "Hardware Design",
+                "Architectures"
+            ]
+        },
+        {
+            "name": "Programming Languages",
+            "icon": "fa-solid fa-code",
+            "keywords": [
+                "Interpreter Design",
+                "Compiler Construction",
+                "Code Analysis and Transformation"
+            ]
+        },
+        {
+            "name": "Machine Learning",
+            "icon": "fa-solid fa-terminal",
+            "keywords": [
+                "Convolutional Neural Networks",
+                "Reinforcement Learning",
+                "Financial Prediction"
+            ]
+        }
+    ],
+    "references": [],
+    "projects": [
+        {
+            "name": "Self-Balancing Robot",
+            "startDate": "2020-01-06",
+            "endDate": "2021-07-30",
+            "summary": "C++, Arduino, MPU6050, L298N",
+            "highlights": [
+                "Two wheeled self-balancing robot using a MPU6050 gyroscope and L298N motor controller.",
+                "All code is written in C++; the motors are PID controlled using the angle of the robot reported by the gyroscope.",
+                "The bulk of the work was done from 2020.01.06 to 2020.01.24, with additional work during July 2021."
+            ],
+            "url": "https://www.nikola.cx/projects/self-balancing-robot"
+        },
+        {
+            "name": "MediumAnt",
+            "startDate": "2022-01-03",
+            "endDate": "2022-02-01",
+            "summary": "C, Polulu Wixel, Polulu Micro Maestro, Servos",
+            "highlights": [
+                "Six-legged ant-like robot created in collaboration with Dr. Shai Revzen at the BIRDS Lab at the University of Michigan.",
+                "Built from laser-cut styrofoam; moves using 360° servos controlled by a Polulu Micro Maestro.",
+                "Movement control accomplished by two wirelessly communicating Polulu Wixels, one on the robot to control motors and the other connected to a PC to recieve commands."
+            ],
+            "url": "https://www.nikola.cx/projects/mediumant"
+        },
+        {
+            "name": "Northwestern Fintech Club",
+            "startDate": "2023-06-01",
+            "endDate": "",
+            "summary": "C++, Python, CMake, Machine Learning, Redis, libcurl, libuv",
+            "highlights": [
+                "Created a orderbook system to pull orderbooks from exchanges using libcurl and libuv, then push them into a Redis instance for consumption by ML prediction clients.",
+                "Organized linting and build systems for multiple projects, in C++ and Python.",
+                "Helped create a devlopment architecture for the coming years, with a focus on reducing technical debt."
+            ],
+            "url": "https://www.nikola.cx/projects/nuft"
+        }
+    ]
+}
