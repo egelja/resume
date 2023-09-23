@@ -29,7 +29,7 @@ jobs:
       - name: Pull latest resume and check if updates are needed
         id: check
         run: |
-          wget https://raw.githubusercontent.com/egelja/egelja.github.io/master/assets/json/resume.json
+          curl https://raw.githubusercontent.com/egelja/egelja.github.io/master/assets/json/resume.json -O
 
           if git diff --exit-code; then
             echo 'val=false' >> "$GITHUB_OUTPUT"
