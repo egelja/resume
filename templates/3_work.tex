@@ -5,7 +5,7 @@
 <& for job in work | sort(attribute='endDate') | sort(attribute='startDate') | reverse if not job.cv_only &>
 
 \resumeSubheading{<<job.position>>}{%
-  <<job.startDate | format_date>> -- <<job.endDate | default('') | format_date>>%
+  <<job.startDate | format_date>> -- <<job.endDate | default('') | format_date>>\vspace{-2pt}%
 }{%
   <&- if job.url &>
   \href{<<job.url>>}{<<job.name>>}%
@@ -26,6 +26,7 @@
 <& endfor &>
 \resumeItemListEnd
 
+\normalsize
 \vspace{-4pt}
 <& endfor &>
 
