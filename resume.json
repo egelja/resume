@@ -28,23 +28,39 @@
     },
     "work": [
         {
+            "name": "Ansys",
+            "url": "https://ansys.com",
+            "position": "Campus Ambassador",
+            "startDate": "2023-09-20",
+            "endDate": "",
+            "summary": "Acted as the student representative for Ansys on Northwestern's Campus.",
+            "location": "Evanston, IL",
+            "highlights": [
+                "Researched, reached out to, and scheduled meetings with relevant campus groups to discuss Ansys' tools.",
+                "Organized lunch info sessions for Ansys, including booking rooms and organizing food.",
+                "Coordinated with a member of the Ansys team for the campus work."
+            ],
+            "cv_only": false
+        },
+        {
             "name": "PARAG@N Lab",
             "url": "http://paragon.cs.northwestern.edu/#Research",
             "position": "Summer Undergraduate Researcher",
             "startDate": "2023-06-12",
-            "endDate": "",
+            "endDate": "2023-09-19",
             "summary": "Funded by an NSF REU and a grant from the NU CS department, I was able to perform cutting-edge research on quantum computing.",
             "location": "Evanston, IL",
             "highlights": [
                 "Designed and programmed a quantum compiler to optimize quantum circuits for emerging quantum computer topologies.",
                 "Created a development framework and tools for further quantum systems research.",
                 "Student leader of the project while an undergraduate student."
-            ]
+            ],
+            "cv_only": false
         },
         {
             "name": "Northwestern University",
             "url": "https://www.mccormick.northwestern.edu/computer-science/academics/undergraduate/peer-mentor-program/",
-            "position": "Peer Mentor",
+            "position": "Teaching Assistant",
             "startDate": "2023-06-11",
             "endDate": "2023-08-25",
             "summary": "Acted as an undergraduate peer mentor for CS 321 Programming Languages.",
@@ -52,7 +68,8 @@
             "highlights": [
                 "Held several office hours each week.",
                 "Answered questions, both synchronously in office hours each week and asynchronously on a Piazza message board."
-            ]
+            ],
+            "cv_only": false
         }
     ],
     "volunteer": [
@@ -82,10 +99,14 @@
             "score": "4.00/4.00",
             "location": "Evanston, IL",
             "courses": [
-                "CS 322: Compiler Construction",
-                "CS 349: Machine Learning",
-                "CS 449: Deep Learning"
-            ]
+                "Computer Architecture",
+                "Compiler Construction",
+                "Code Analysis and Transformation (LLVM)",
+                "Interfaces and UI/UX Design",
+                "Machine Learning",
+                "Deep Learning"
+            ],
+            "cv_only": false
         },
         {
             "institution": "Roycemore School",
@@ -101,7 +122,8 @@
                 "AP Physics C: Mechanics and E&M",
                 "CS 213: Intro to Computer Systems (Dual Enrollment @ NU)",
                 "MATH 240: Linear Algebra (Dual Enrollment @ NU)"
-            ]
+            ],
+            "cv_only": true
         }
     ],
     "awards": [
