@@ -18,7 +18,7 @@ jobs:
   should_run:
     runs-on: ubuntu-latest
     outputs:
-      value: steps.check.outputs.val
+      value: steps.check.outputs.value
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v2
@@ -32,10 +32,10 @@ jobs:
           curl https://raw.githubusercontent.com/egelja/egelja.github.io/master/assets/json/resume.json -O
 
           if git diff --exit-code > /dev/null; then
-            echo 'val=false' >> "$GITHUB_OUTPUT"
+            echo 'value=false' >> "$GITHUB_OUTPUT"
             echo "Not rebuilding!"
           else
-            echo 'val=true' >> "$GITHUB_OUTPUT"
+            echo 'value=true' >> "$GITHUB_OUTPUT"
             echo "Rebuilding!"
           fi
      
@@ -53,7 +53,7 @@ jobs:
           
   build_latex:
     runs-on: ubuntu-latest
-    needs: should_run
+    needs: [should_run]
     if: always() && needs.should_run.outputs.value == 'true'
     steps:
       - name: Set up Git repository
