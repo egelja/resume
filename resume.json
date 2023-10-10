@@ -100,8 +100,9 @@
             "location": "Evanston, IL",
             "courses": [
                 "Computer Architecture",
+                "Advanced Digital Design (with Verilog)",
                 "Compiler Construction",
-                "Code Analysis and Transformation (LLVM)",
+                "Code Analysis and Transformation (in LLVM)",
                 "Interfaces and UI/UX Design",
                 "Machine Learning",
                 "Deep Learning"
