@@ -16,7 +16,7 @@
   <&- if 'High School' is in(school.studyType) &>
   High School Diploma%
   <&- else &>
-  <<school.studyType>>, <<school.area>>%
+  <<school.studyType | fix_study_type_and_area(school.area)>>
   <&- endif &>
 }{%
   <<school.startDate | format_date>> -- <<school.endDate | default(school.expectedEndDate, boolean=True) | format_date>>%

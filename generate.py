@@ -182,6 +182,23 @@ def format_date_full(date_str: str) -> str:
 
 env.filters["format_date_full"] = format_date_full
 
+# Study type fix for NU
+def fix_study_type_and_area(study_type: str, area: str) -> str:
+    if '/' not in study_type or '/' not in area:
+        return f"{study_type}, {area}"
+
+    # Get areas
+    area1, area2 = area.split('/')
+
+    # Get degrees
+    deg1, rest = study_type.split('/')
+    deg2, rest = rest.split(' ', 1)
+
+    # Put back together
+    return f"{deg1} {rest}, {area1}; {deg2} {rest}, {area2}"
+
+env.filters["fix_study_type_and_area"] = fix_study_type_and_area
+
 # Fluency to percentage
 def fluency_to_percentage(s: str) -> str:
     s = s.lower()
