@@ -2,7 +2,7 @@
 
 \resumeSubHeadingListStart
 
-<& for job in work | sort(attribute='endDate') | sort(attribute='startDate') | reverse if not job.cv_only &>
+<& for job in work | sort(attribute='endDate') | sort(attribute='startDate') | sort(attribute='last', reverse=True) | reverse if not job.cv_only &>
 
 \resumeSubheading{<<job.position>>}{%
   <<job.startDate | format_date>> -- <<job.endDate | default('') | format_date>>\vspace{-2pt}%
@@ -17,7 +17,7 @@
 <& if job.summary &>
 \vspace{4pt}
 \small{<<job.summary>>}%\normalsize
-\vspace{-8pt}
+\vspace{-10pt}
 <& endif &>
 
 \resumeItemListStart
