@@ -28,19 +28,36 @@
     },
     "work": [
         {
+            "position": "Campus Ambassador",
             "name": "Ansys",
             "url": "https://ansys.com",
-            "position": "Campus Ambassador",
             "startDate": "2023-09-20",
             "endDate": "",
-            "summary": "Acted as the student representative for Ansys on Northwestern's Campus.",
+            "summary": "",
             "location": "Evanston, IL",
             "highlights": [
                 "Researched, reached out to, and scheduled meetings with relevant campus groups to discuss Ansys' tools.",
                 "Organized lunch info sessions for Ansys, including booking rooms and organizing food.",
                 "Coordinated with a member of the Ansys team for the campus work."
             ],
-            "cv_only": false
+            "cv_only": false,
+            "last": true
+        },
+        {
+            "position": "Software Engineer",
+            "name": "Northwestern Fintech Club",
+            "startDate": "2023-06-15",
+            "endDate": "",
+            "summary": "Help build and maintain a trading infrastructure using C++, Python, CMake, Machine Learning, libcurl, and libuv.",
+            "location": "Evanston, IL",
+            "highlights": [
+                "Created a orderbook system to pull orderbooks from exchanges using libcurl and libuv, then push them into a Redis instance for consumption by ML prediction clients.",
+                "Organized linting and build systems for multiple projects, in C++ and Python.",
+                "Helped create a devlopment architecture for the coming years, with a focus on reducing technical debt."
+            ],
+            "url": "https://www.nikola.cx/projects/nuft",
+            "cv_only": false,
+            "last": false
         },
         {
             "name": "PARAG@N Lab",
@@ -55,7 +72,8 @@
                 "Created a development framework and tools for further quantum systems research.",
                 "Student leader of the project while an undergraduate student."
             ],
-            "cv_only": false
+            "cv_only": false,
+            "last": false
         },
         {
             "name": "Northwestern University",
@@ -67,9 +85,10 @@
             "location": "Evanston, IL",
             "highlights": [
                 "Held several office hours each week.",
-                "Answered questions, both synchronously in office hours each week and asynchronously on a Piazza message board."
+                "Answered questions, both synchronously in office hours and asynchronously on a Piazza message board."
             ],
-            "cv_only": false
+            "cv_only": false,
+            "last": false
         }
     ],
     "volunteer": [
@@ -284,18 +303,6 @@
                 "Movement control accomplished by two wirelessly communicating Polulu Wixels, one on the robot to control motors and the other connected to a PC to recieve commands."
             ],
             "url": "https://www.nikola.cx/projects/mediumant"
-        },
-        {
-            "name": "Northwestern Fintech Club",
-            "startDate": "2023-06-01",
-            "endDate": "",
-            "summary": "C++, Python, CMake, Machine Learning, Redis, libcurl, libuv",
-            "highlights": [
-                "Created a orderbook system to pull orderbooks from exchanges using libcurl and libuv, then push them into a Redis instance for consumption by ML prediction clients.",
-                "Organized linting and build systems for multiple projects, in C++ and Python.",
-                "Helped create a devlopment architecture for the coming years, with a focus on reducing technical debt."
-            ],
-            "url": "https://www.nikola.cx/projects/nuft"
         }
     ]
 }
