@@ -257,13 +257,13 @@ if _should_render("education"):
 if _should_render("work"):
     _render_template("3_work.tex", RESUME)
 
-# Awards
-if _should_render("awards"):
-    _render_template("4_awards.tex", RESUME)
-
 # Projects
 if _should_render("projects"):
-    _render_template("5_projects.tex", RESUME)
+    _render_template("4_projects.tex", RESUME)
+
+# Awards
+if _should_render("awards"):
+    _render_template("5_awards.tex", RESUME)
 
 # Skills
 if _should_render("skills"):
