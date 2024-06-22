@@ -5,7 +5,7 @@ from datetime import datetime
 from os import getenv
 from pathlib import Path
 from sys import exit
-
+import orjson
 import httpx
 import jinja2
 from rich.console import Console
@@ -33,7 +33,9 @@ if res.status_code != 200:
     )
     exit(1)
 
-RESUME = res.json()
+#RESUME = res.json()
+with open("resume.json", 'rb') as f:
+    RESUME = orjson.loads(f.read())
 
 if getenv("RESUME_DEBUG", default=False):
     console.print_json(res.text)
