@@ -2,7 +2,7 @@
 resources/avatar*
 
 # Generated files
-sections/
+#sections/
 
 # Created by https://www.toptal.com/developers/gitignore/api/python,windows,emacs,latex
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,windows,emacs,latex
