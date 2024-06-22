@@ -48,7 +48,7 @@
             "name": "Northwestern Fintech Club",
             "startDate": "2023-06-15",
             "endDate": "",
-            "summary": "Help build and maintain a trading infrastructure using C++, Python, CMake, Machine Learning, libcurl, and libuv.",
+            "summary": "Helped build and maintain a trading infrastructure using C++, Python, CMake, Machine Learning, libcurl, and libuv.",
             "location": "Evanston, IL",
             "highlights": [
                 "Created a orderbook system to pull orderbooks from exchanges using libcurl and libuv, then push them into a Redis instance for consumption by ML prediction clients.",
