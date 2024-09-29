@@ -1,3 +1,4 @@
 * resume
-Resume, generated with latex from JSONResume.
+
+Resume and /Curriculum Vitae/.
 
