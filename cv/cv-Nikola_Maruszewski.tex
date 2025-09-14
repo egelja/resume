@@ -15,7 +15,6 @@
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{verbatim}
 \usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
@@ -24,6 +23,10 @@
 \usepackage{import}
 \usepackage{gensymb}
 \usepackage{fontawesome5}
+\usepackage{soul}
+
+\PassOptionsToPackage{hyphens}{url}
+\usepackage[hidelinks,breaklinks=true]{hyperref}
 
 
 %----------FONT OPTIONS----------
@@ -121,19 +124,23 @@
 \import{sections/}{3_work.tex}
 
 %-----------PROJECTS-----------
-\import{sections/}{4_projects.tex}
+%\import{sections/}{4_projects.tex}
 
 % -----------AWARDS-----------
 \import{sections/}{5_awards.tex}
 
-% -----------TALKS-----------
-\import{sections/}{6_talks.tex}
+% -----------PUBLICATIONS-----------
+\import{sections/}{6_publications.tex}
 
 % -----------RESEARCH GRANTS-----------
 \import{sections/}{7_grants.tex}
 
+% -----------TALKS-----------
+\import{sections/}{8_talks.tex}
+
+
 %-----------PROGRAMMING SKILLS-----------
-\import{sections/}{99_skills.tex}
+%\import{sections/}{99_skills.tex}
 
 %-------------------------------------------
 \end{document}
